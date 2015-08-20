@@ -1,0 +1,131 @@
+\documentclass{tufte-handout}
+
+\title{A Tufte-Handout Style\thanks{Inspired by Edward~R. Tufte!} Template}
+
+\author{Shawn O'Hare}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+% --------------------------------------------------------------------------
+% Packages
+% --------------------------------------------------------------------------
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{amsthm, thmtools}   % basic theorem environments 
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+% \usepackage{titletoc}
+
+% --------------------------------------------------------------------------
+% tufte-latex specific configuration
+% --------------------------------------------------------------------------
+\setcounter{equation}{0}
+\setcounter{secnumdepth}{2}
+
+% --------------------------------------------------------------------------
+% Theorem environment configurations
+% --------------------------------------------------------------------------
+% Place numbers on the left.
+\swapnumbers
+% Equation counter is per section
+% \numberwithin{equation}{section}
+\declaretheoremstyle[
+  spaceabove=6pt,
+  spacebelow=6pt,
+  headfont=\normalfont\bfseries\color{BrickRed},
+  notefont=\normalfont\bfseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em
+  % qed=\qedsymbol
+]{theorem}
+
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\normalfont\bfseries,
+  notefont=\mdseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em,
+  % qed=\qedsymbol
+]{definition}
+
+\declaretheoremstyle[
+  spaceabove=6pt,
+  spacebelow=6pt,
+  headfont=\itshape,
+  notefont=\normalfont\mdseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em,
+  % qed=\qedsymbol
+]{remark}
+
+\declaretheorem[name=Theorem,     numberwithin=section, style=theorem]{theorem}
+\declaretheorem[name=Lemma,       sharenumber=theorem, style=theorem]{lem}
+\declaretheorem[name=Proposition, sharenumber=theorem, style=theorem]{prop}
+\declaretheorem[name=Definition,  sharenumber=theorem, style=definition]{defn}
+\declaretheorem[name=Notation,    sharenumber=theorem, style=definition]{notation}
+\declaretheorem[name=Remark,      sharenumber=theorem, style=remark]{remark}
+\declaretheorem[name=Example,     sharenumber=theorem, style=remark]{example}
+
+
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+This document is an tufte-handout template that defines certain theorem-like
+environments.
+\end{abstract}
+
+\tableofcontents
+%\printclassoptions
+
+\section{Page Layout}\label{sec:page-layout}
+\subsection{Headings}\label{sec:headings}
+
+% let's start a new thought -- a new section
+\newthought{In his later books},\cite{Tufte2006} Tufte
+starts each section with a bit of vertical space, a non-indented paragraph,
+and sets the first few words of the sentence in \textsc{small caps}.
+
+\begin{defn}[Gadget]
+  A \emph{gadget} is a thing.
+  
+  Each gadget comes equipped with some data.
+\end{defn}
+
+This is some text between two theorem-like environments.
+
+\begin{example}[Gadget]
+  A set is a type of gadget.  
+\end{example}
+
+\begin{remark}[Some remark]
+  Now, let's consider some remark.
+\end{remark}
+
+\begin{theorem}[Test Theorem]
+  Let $f \colon \mathbb Z \to \mathbb Z$ be a function such that
+  \begin{equation}
+    f(x) = g(x) \quad \forall x \in \mathbb Z
+  \end{equation}
+\end{theorem}
+
+
+\bibliography{template}
+\bibliographystyle{plainnat}
+
+
+\end{document}

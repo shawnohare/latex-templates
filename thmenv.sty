@@ -1,0 +1,51 @@
+\ProvidesPackage{thmenv}[20 Aug 2015 v0.0.0 LaTeX package for theorem environment styles]
+
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
+% --------------------------------------------------------------------------
+% Theorem environment configurations
+% --------------------------------------------------------------------------
+% Place numbers on the left.
+\swapnumbers
+% Equation counter is per section
+% \numberwithin{equation}{section}
+\declaretheoremstyle[
+  spaceabove=6pt,
+  spacebelow=6pt,
+  headfont=\normalfont\bfseries\color{BrickRed},
+  notefont=\normalfont\bfseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em
+  % qed=\qedsymbol
+]{theorem}
+
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\normalfont\bfseries,
+  notefont=\mdseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em,
+  % qed=\qedsymbol
+]{definition}
+
+\declaretheoremstyle[
+  spaceabove=6pt,
+  spacebelow=6pt,
+  headfont=\itshape,
+  notefont=\normalfont\mdseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em,
+  % qed=\qedsymbol
+]{remark}
+
+\declaretheorem[name=Theorem,     numberwithin=section, style=theorem]{theorem}
+\declaretheorem[name=Lemma,       sharenumber=theorem, style=theorem]{lem}
+\declaretheorem[name=Proposition, sharenumber=theorem, style=theorem]{prop}
+\declaretheorem[name=Definition,  sharenumber=theorem, style=definition]{defn}
+\declaretheorem[name=Notation,    sharenumber=theorem, style=definition]{notation}
+\declaretheorem[name=Remark,      sharenumber=theorem, style=remark]{remark}
+\declaretheorem[name=Example,     sharenumber=theorem, style=remark]{example}
+\endinput

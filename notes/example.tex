@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{notes}
+
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+\title{A Style for Random Notes}
+\author{Shawn O'Hare}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+This document serves an example utilizing the styles provided by
+notes.sty
+\end{abstract}
+
+\tableofcontents
+%\printclassoptions
+
+\section{Page Layout}\label{sec:page-layout}
+\subsection{Headings}\label{sec:headings}
+
+% let's start a new thought -- a new section
+In his later books,~\cite{Tufte2006} Tufte
+starts each section with a bit of vertical space, a non-indented paragraph,
+and sets the first few words of the sentence in \textsc{small caps}.
+
+\begin{definition}[Gadget]
+  A \emph{gadget} is a thing.
+  Each gadget comes equipped with some data.
+\end{definition}
+
+Various special types of gadgets exist.  For example, the widget is
+commonly encountered in practice.
+
+\begin{definition}[widget]
+  A \emph{widget} is a type of gadget.
+\end{definition}
+
+Below we consider some examples of gadgets.  This text serves as an example of a
+paragraph inbetween two theorem-like environments.
+
+Another paragraph to demonstrate space rendering between paragraphs. Sometimes a
+line break between each paragraph is desirable.
+
+\begin{example}[Gadget]
+  A set is a type of gadget.
+\end{example}
+
+This paragraph serves as some text before a remark, which in the
+amsthm style has no extra space above or below.
+
+\begin{remark}[Some remark]
+  Now, let's consider some remark.
+\end{remark}
+
+This paragraph serves as some text after a remark, which in the
+amsthm style has no extra space above or below.
+
+
+\begin{theorem}[Quotient Groups]
+  Let $G$ be a finite group and $H$ a normal subgroup.
+  Then the left cosets $G / H$ form a group under
+  left multiplication via $(xH)(yH) = xyH$.
+\end{theorem}
+
+\begin{proof}
+  Since $H$ is normal in $G$, for any $x \in G$
+  $H =  x^{-1}Hx$. Multiply by $x$ on both sides yields
+  $xH=Hx$. It follows for any
+  $x$, $y$ in $G$ that
+  \begin{align}
+    (xH)(yH)
+    &= x(Hy)H \\
+    &= x(yH)H \\
+    &= xy(HH) \\
+    &=xyH.
+  \end{align}
+  From this it easily follows that $G / H$ is a group.
+\end{proof}
+
+\begin{table}\label{tab:1}
+  \centering
+  \begin{tabular}{@{}llr@{}} \toprule
+  \multicolumn{2}{c}{Item} \\ \cmidrule(r){1-2}
+  Animal & Description & Price (\$) \\ \midrule
+  Gnat  & per gram  & 13.65 \\
+        & each    & 50.00 \\
+  Gnu   & stuffed & 10.00 \\
+  Emu   & stuffed   & 5.00 \\
+  \bottomrule
+  \end{tabular}
+  \caption{An example table}
+\end{table}
+
+\bibliography{example}
+\bibliographystyle{plainnat}
+
+
+\end{document}

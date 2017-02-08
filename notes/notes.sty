@@ -1,0 +1,128 @@
+\ProvidesPackage{notes}
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{thmtools}
+\RequirePackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\RequirePackage{booktabs} % book-quality tables
+\RequirePackage{units}    % non-stacked fractions and better unit spacing
+\RequirePackage{multicol} % multiple column layout facilities
+\RequirePackage{lipsum}   % filler text
+% \RequirePackage[parfil]{parskip}
+\RequirePackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+% Comment out the fullpage package if using tufte-latex tufte-handout style.
+\RequirePackage{fullpage}
+
+% --------------------------------------------------------------------------
+% Theorem environment configurations
+% --------------------------------------------------------------------------
+
+% Sections and subsections are numbered.
+% Theorem-like environments inside are numbered with respect to the
+% subsection.
+\swapnumbers %numbers on the left
+\setcounter{equation}{0}
+\setcounter{secnumdepth}{2}
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+
+\declaretheoremstyle[
+  spaceabove=10pt,
+  spacebelow=10pt,
+  headfont=\normalfont\bfseries, % \color{BrickRed},
+  notefont=\mdseries,
+  notebraces={(}{)},
+  bodyfont=\itshape,
+  postheadspace=1em
+  % qed=\qedsymbol
+]{theorem}
+
+\declaretheoremstyle[
+  spaceabove=10pt,
+  spacebelow=10pt,
+  headfont=\normalfont\bfseries,
+  notefont=\mdseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em,
+  % qed=\qedsymbol
+]{definition}
+
+\declaretheoremstyle[
+  % spaceabove=12pt,
+  % spacebelow=6pt,
+  headfont=\itshape,
+  notefont=\normalfont\mdseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  postheadspace=1em,
+  % qed=\qedsymbol
+]{remark}
+
+\declaretheorem[name=Theorem,     numberwithin=subsection, style=theorem]{theorem}
+\declaretheorem[name=Assertion,   sharenumber=theorem, style=theorem]{assertion}
+\declaretheorem[name=Conjecture,  sharenumber=theorem, style=theorem]{conjecture}
+\declaretheorem[name=Corollary,   sharenumber=theorem, style=theorem]{corollary}
+\declaretheorem[name=Criterion,   sharenumber=theorem, style=theorem]{criterion}
+\declaretheorem[name=Lemma,       sharenumber=theorem, style=theorem]{lemma}
+\declaretheorem[name=Proposition, sharenumber=theorem, style=theorem]{proposition}
+
+\declaretheorem[name=Definition,  sharenumber=theorem, style=definition]{definition}
+\declaretheorem[name=Algorithm,   sharenumber=theorem, style=definition]{algorithm}
+\declaretheorem[name=Assumption,  sharenumber=theorem, style=definition]{assumption}
+\declaretheorem[name=Axiom,       sharenumber=theorem, style=definition]{axiom}
+\declaretheorem[name=Condition,   sharenumber=theorem, style=definition]{condition}
+\declaretheorem[name=Example,     sharenumber=theorem, style=definition]{example}
+\declaretheorem[name=Problem,     sharenumber=theorem, style=definition]{problem}
+\declaretheorem[name=Property,    sharenumber=theorem, style=definition]{property}
+\declaretheorem[name=Question,    sharenumber=theorem, style=definition]{question}
+\declaretheorem[name=Hypothesis,  sharenumber=theorem, style=definition]{hypothesis}
+
+\declaretheorem[name=Remark,         sharenumber=theorem, style=remark]{remark}
+\declaretheorem[name=Acknowledgment, sharenumber=theorem, style=remark]{acknowledgement}
+\declaretheorem[name=Case,           sharenumber=theorem, style=remark]{case}
+\declaretheorem[name=Conclusion,     sharenumber=theorem, style=remark]{conclusion}
+\declaretheorem[name=Claim,          sharenumber=theorem, style=remark]{claim}
+\declaretheorem[name=Notation,       sharenumber=theorem, style=remark]{notation}
+\declaretheorem[name=Note,           sharenumber=theorem, style=remark]{note}
+\declaretheorem[name=Summary,        sharenumber=theorem, style=remark]{summary}
+
+% Using amsthm.
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Theorem}[subsection]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{conjecture}[theorem]{Conjecture}
+% \newtheorem{criterion}[theorem]{Criterion}
+% \newtheorem{assertion}[theorem]{Assertion}
+
+% \theoremstyle{definition}
+% \newtheorem{definition}[theorem]{Definition}
+% \newtheorem{condition}[theorem]{Condition}
+% \newtheorem{problem}[theorem]{Problem}
+% \newtheorem{example}[theorem]{Example}
+% \newtheorem{exercise}[theorem]{Exercise}
+% \newtheorem{algorithm}[theorem]{Algorithm}
+% \newtheorem{question}[theorem]{Question}
+% \newtheorem{axiom}[theorem]{Axiom}
+% \newtheorem{property}[theorem]{Property}
+% \newtheorem{assumption}[theorem]{Assumption}
+% \newtheorem{hypothesis}[theorem]{hypothesis}
+
+% \theoremstyle{remark}
+% \newtheorem{remark}[theorem]{Remark}
+% \newtheorem{note}[theorem]{Note}
+% \newtheorem{notation}[theorem]{Notation}
+% \newtheorem{claim}[theorem]{Claim}
+% \newtheorem{summary}[theorem]{Summary}
+% \newtheorem{acknowledgement}[theorem]{Acknowledgment}
+% \newtheorem{case}[theorem]{Case}
+% \newtheorem{conclusion}[theorem]{Conclusion}
+
+
+\endinput
